@@ -1,7 +1,11 @@
 package gui
 
-import "fyne.io/fyne/v2/widget"
+import (
+	"fyne.io/fyne/v2"
+)
 
 type handler struct {
-	console *widget.Entry
+	// console *widget.Entry
+	window fyne.Window
+	*Console
 }

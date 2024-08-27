@@ -3,8 +3,8 @@
    viewBox="0 0 200 200"
    version="1.1"
    id="svg3"
-   sodipodi:docname="webgokit-icon-alt.svg"
-   inkscape:export-filename="webgokit-icon-alt.png"
+   sodipodi:docname="webgokit-icon.svg"
+   inkscape:export-filename="assets/icon.png"
    inkscape:export-xdpi="190"
    inkscape:export-ydpi="190"
    inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
@@ -23,9 +23,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:export-bgcolor="#ffffffff"
+     inkscape:export-bgcolor="#ffffff00"
      inkscape:zoom="4.185"
-     inkscape:cx="100"
+     inkscape:cx="99.880526"
      inkscape:cy="100"
      inkscape:window-width="1920"
      inkscape:window-height="1051"
@@ -68,5 +68,5 @@
      text-anchor="middle"
      dominant-baseline="middle"
      id="text3"
-     style="stroke-width:0.599;fill:#654ff0;fill-opacity:1;stroke:#ffffff;stroke-opacity:1;stroke-dasharray:none;stroke-miterlimit:3.9">W</text>
+     style="stroke-width:0.599;fill:#f9f9f9;fill-opacity:1;stroke:#ffffff;stroke-opacity:1;stroke-dasharray:none;stroke-miterlimit:3.9">W</text>
 </svg>
