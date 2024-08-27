@@ -2,6 +2,7 @@ package gui
 
 import (
 	"image/color"
+	"log"
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/canvas"
@@ -22,6 +23,7 @@ type Console struct {
 
 func NewConsole() *Console {
 	c := &Console{
+
 		texts:   make([]*canvas.Text, 0),
 		content: container.New(layout.NewVBoxLayout()),
 
@@ -32,8 +34,6 @@ func NewConsole() *Console {
 		colorRed:    color.RGBA{R: 255, A: 255},
 	}
 	c.scroll = container.NewScroll(c.content)
-
-	// log.SetOutput(c)
 
 	return c
 }
@@ -49,7 +49,11 @@ func (c *Console) Debug(message string) {
 }
 
 func (c *Console) Error(message string) {
+	// mostrar mensaje en consola gui
 	c.addText(message, c.colorRed)
+
+	// guardar mensaje en archivo log.txt
+	log.Println(message)
 }
 
 func (c *Console) addText(text string, col color.Color) {
@@ -57,10 +61,4 @@ func (c *Console) addText(text string, col color.Color) {
 	c.texts = append(c.texts, t)
 	c.content.Add(t)
 	c.scroll.ScrollToBottom()
-}
-
-func (c *Console) Write(p []byte) (n int, err error) {
-	c.Error(string(p))
-
-	return len(p), nil
 }

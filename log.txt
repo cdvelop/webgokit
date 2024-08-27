@@ -1,0 +1,47 @@
+TEST Error Browser CloseTEST Error Server CloseTEST Error Browser CloseTEST Error Server Close2024/08/27 16:50:30 TEST Error Browser Close
+2024/08/27 16:50:30 TEST Error Server Close
+TEST Error Browser CloseTEST Error Server Close2024/08/27 17:01:56 TEST Error Browser Close
+2024/08/27 17:01:56 TEST Error Server Close
+2024/08/27 17:07:51 TEST Error Browser Close
+2024/08/27 17:07:51 TEST Error Server Close
+2024/08/27 17:08:17 TEST Error Browser Close
+2024/08/27 17:08:17 TEST Error Server Close
+2024/08/27 17:10:19 TEST Error Browser Close
+2024/08/27 17:10:19 TEST Error Server Close
+2024/08/27 17:11:22 TEST Error Browser Close
+2024/08/27 17:11:22 TEST Error Server Close
+2024/08/27 17:14:41 TEST Error Browser Close
+2024/08/27 17:14:41 TEST Error Server Close
+2024/08/27 17:15:49 Procesando... log
+2024/08/27 17:15:55 TEST Error Browser Close
+2024/08/27 17:15:55 TEST Error Server Close
+2024/08/27 17:16:06 Procesando... log
+2024/08/27 17:16:11 Procesando... log
+2024/08/27 17:16:12 Procesando... log
+2024/08/27 17:16:25 Procesando... log
+2024/08/27 17:16:25 Procesando... log
+2024/08/27 17:16:25 Procesando... log
+2024/08/27 17:16:26 Procesando... log
+2024/08/27 17:16:26 Procesando... log
+2024/08/27 17:16:26 Procesando... log
+2024/08/27 17:16:33 TEST Error Browser Close
+2024/08/27 17:16:33 TEST Error Server Close
+2024/08/27 17:18:19 Procesando... log
+2024/08/27 17:18:32 TEST Error Browser Close
+2024/08/27 17:18:32 TEST Error Server Close
+2024/08/27 17:19:23 Procesando... log
+2024/08/27 17:19:31 Procesando... log
+2024/08/27 17:19:42 TEST Error Browser Close
+2024/08/27 17:19:42 TEST Error Server Close
+2024/08/27 17:21:32 Procesando... log
+2024/08/27 17:21:43 TEST Error Browser Close
+2024/08/27 17:21:43 TEST Error Server Close
+2024/08/27 17:22:29 Procesando... log
+2024/08/27 17:22:46 Procesando... log
+2024/08/27 17:22:46 Procesando... log
+2024/08/27 17:23:04 TEST Error Browser Close
+2024/08/27 17:23:04 TEST Error Server Close
+2024/08/27 17:32:10 TEST Error Browser Close
+2024/08/27 17:32:10 TEST Error Server Close
+2024/08/27 17:35:56 TEST Error Browser Close
+2024/08/27 17:35:56 TEST Error Server Close

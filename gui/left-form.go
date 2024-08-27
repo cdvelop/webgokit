@@ -11,6 +11,7 @@ func (h *handler) formLeftContent() *fyne.Container {
 	// Botón de procesamiento
 	processButton := widget.NewButton("Procesar", func() {
 		h.Info("Procesando...")
+
 		// Aquí puedes agregar la lógica de procesamiento usando
 		// projectPathEntry.Text y compilationPathEntry.Text
 	})

@@ -2,6 +2,8 @@
 package gui
 
 import (
+	"time"
+
 	"fyne.io/fyne/v2"
 )
 
@@ -14,11 +16,21 @@ func (h *handler) Run() {
 	// Configurar el manejador de cierre
 	h.window.SetCloseIntercept(func() {
 		// Aquí puedes realizar cualquier limpieza o guardar el estado antes de cerrar
-		h.showConfirmDialog("Confirmar cierre", "¿ Deseas cerrar la aplicación ?", func(ok bool) {
+		h.showConfirmDialog("¿ Deseas cerrar la aplicación ?", func(ok bool) {
 			if ok {
 				// Ejecuta aquí cualquier función que necesites antes de cerrar
-				// Por ejemplo, podrías llamar a una función de limpieza:
-				// handler.CleanupBeforeExit()
+
+				if err := h.browser.BrowserClose(); err != nil {
+					h.Error(err.Error())
+				}
+				if err := h.server.ServerClose(); err != nil {
+					h.Error(err.Error())
+				}
+
+				// esperar x segundo para que se cierre
+				time.Sleep(1 * time.Second)
+
+				// cerrar la aplicación
 				h.window.Close()
 			}
 		})

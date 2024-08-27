@@ -5,7 +5,7 @@ import (
 	"fyne.io/fyne/v2/widget"
 )
 
-func (h *handler) showConfirmDialog(title, message string, callback func(bool)) {
+func (h *handler) showConfirmDialog(message string, callback func(bool)) {
 	var dialog *widget.PopUp
 
 	content := container.NewVBox(
