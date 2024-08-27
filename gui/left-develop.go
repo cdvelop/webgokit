@@ -1,9 +1,7 @@
 package gui
 
 import (
-	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/container"
-	"fyne.io/fyne/v2/dialog"
 	"fyne.io/fyne/v2/widget"
 )
 
@@ -11,46 +9,20 @@ func (h *handler) makeDevelopForm() *widget.AccordionItem {
 	// FOLDER PROJECT PATH
 	inPathEntry := widget.NewEntry()
 	inPathButton := widget.NewButton("Select In Folder", func() {
-		// Crear el cuadro de diálogo para seleccionar la carpeta
-		folderDialog := dialog.NewFolderOpen(func(uri fyne.ListableURI, err error) {
-			if err != nil {
-				h.Error(err.Error())
-				return
-			}
-			if uri == nil {
-				return
-			}
-			inPathEntry.SetText(uri.Path())
-			h.Success("Module folder selected")
-		}, h.window)
+		h.showFolderDialog(inPathEntry, "Folder IN", func() {
 
-		// Establecer el tamaño del cuadro de diálogo
-		folderDialog.Resize(fyne.NewSize(800, 600)) // Cambia el tamaño según tus necesidades
+			h.compiler.InputDirectoryChange(inPathEntry.Text)
+		})
 
-		// Mostrar el diálogo personalizado
-		folderDialog.Show()
 	})
 
 	// DESTINATION COMPILER PROJECT
 	outPathEntry := widget.NewEntry()
 	outPathButton := widget.NewButton("Select Out Folder", func() {
-		// Crear el cuadro de diálogo para seleccionar la carpeta
-		folderDialog := dialog.NewFolderOpen(func(uri fyne.ListableURI, err error) {
-			if err != nil {
-				h.Error(err.Error())
-				return
-			}
-			if uri == nil {
-				return
-			}
-			outPathEntry.SetText(uri.Path())
-		}, h.window)
+		h.showFolderDialog(outPathEntry, "Folder OUT", func() {
 
-		// Establecer el tamaño del cuadro de diálogo
-		folderDialog.Resize(fyne.NewSize(800, 600)) // Cambia el tamaño según tus necesidades
-
-		// Mostrar el diálogo personalizado
-		folderDialog.Show()
+			h.compiler.OutputDirectoryChange(outPathEntry.Text)
+		})
 	})
 
 	moduleDevelop := widget.NewAccordionItem("Develop", container.NewVBox(

@@ -16,7 +16,7 @@ func (h *handler) Run() {
 	// Configurar el manejador de cierre
 	h.window.SetCloseIntercept(func() {
 		// Aquí puedes realizar cualquier limpieza o guardar el estado antes de cerrar
-		h.showConfirmDialog("¿ Deseas cerrar la aplicación ?", func(ok bool) {
+		h.customConfirmDialog("¿ Deseas cerrar la aplicación ?", func(ok bool) {
 			if ok {
 				// Ejecuta aquí cualquier función que necesites antes de cerrar
 
@@ -27,8 +27,8 @@ func (h *handler) Run() {
 					h.Error(err.Error())
 				}
 
-				// esperar x segundo para que se cierre
-				time.Sleep(1 * time.Second)
+				// esperar x tiempo para el cierre
+				time.Sleep(200 * time.Millisecond)
 
 				// cerrar la aplicación
 				h.window.Close()

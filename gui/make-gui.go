@@ -10,7 +10,7 @@ func (h *handler) makeGUI() fyne.CanvasObject {
 
 	top := h.makeBanner()
 	left := container.NewPadded(container.NewVBox(h.formLeftContent()))
-	content := container.NewPadded(container.NewScroll(h.Console.scroll))
+	content := container.NewPadded(container.NewScroll(h.Console()))
 
 	// return container.NewBorder(h.makeBanner(),nil,container.NewVBox(h.formLeftContent()),nil,container.NewScroll(h.Console.scroll),)
 
