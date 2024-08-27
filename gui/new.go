@@ -1,4 +1,3 @@
-//go:generate fyne bundle -o bundled.go assets
 package gui
 
 import (
@@ -6,19 +5,21 @@ import (
 	"fyne.io/fyne/v2/app"
 )
 
-func Run() {
+type handler struct {
+	// console *widget.Entry
+	window fyne.Window
+	*Console
+}
+
+func New() *handler {
 
 	a := app.NewWithID("com.webgokit.cdvelop.github")
 	a.Settings().SetTheme(newFysionTheme())
-	w := a.NewWindow("WebGoKit")
 
 	h := &handler{
-		window:  w,
+		window:  a.NewWindow("WebGoKit"),
 		Console: NewConsole(),
 	}
 
-	w.Resize(fyne.NewSize(1080, 720))
-
-	w.SetContent(h.makeGUI())
-	w.ShowAndRun()
+	return h
 }
