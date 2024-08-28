@@ -25,17 +25,23 @@ type consoleAdapter interface {
 	Error(message string)
 }
 
+type watcherAdapter interface {
+	FileWatcherStart()
+	RegisterFiles(folderToWatch string)
+}
+
 type handler struct {
 	// console *widget.Entry
 	window fyne.Window
 	consoleAdapter
 
+	watcher  watcherAdapter
 	compiler compilerAdapter
 	browser  browserAdapter
 	server   serverAdapter
 }
 
-func New(cons consoleAdapter, c compilerAdapter, b browserAdapter, s serverAdapter) *handler {
+func New(cons consoleAdapter, w watcherAdapter, c compilerAdapter, b browserAdapter, s serverAdapter) *handler {
 
 	a := app.NewWithID("com.webgokit.cdvelop.github")
 	a.Settings().SetTheme(newFysionTheme())
@@ -43,10 +49,10 @@ func New(cons consoleAdapter, c compilerAdapter, b browserAdapter, s serverAdapt
 	h := &handler{
 		window:         a.NewWindow("WebGoKit"),
 		consoleAdapter: cons,
-
-		compiler: c,
-		browser:  b,
-		server:   s,
+		watcher:        w,
+		compiler:       c,
+		browser:        b,
+		server:         s,
 	}
 
 	return h

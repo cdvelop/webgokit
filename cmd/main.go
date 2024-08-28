@@ -6,7 +6,7 @@ import (
 	"github.com/cdvelop/webgokit/console"
 	"github.com/cdvelop/webgokit/gui"
 	"github.com/cdvelop/webgokit/server"
-	// "github.com/cdvelop/webgokit/watch"
+	"github.com/cdvelop/webgokit/watch"
 )
 
 func main() {
@@ -19,11 +19,11 @@ func main() {
 
 	svr := server.New()
 
-	newGui := gui.New(cmd, comp, bwr, svr)
+	w := watch.New(comp, nil, nil, cmd)
+
+	newGui := gui.New(cmd, w, comp, bwr, svr)
 
 	// sComp := compiler.New(newGui)
-
-	// watchFiles := watch.New(nil, nil, nil, newGui)
 
 	newGui.Run()
 

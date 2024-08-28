@@ -12,6 +12,8 @@ func (h *handler) makeDevelopForm() *widget.AccordionItem {
 		h.showFolderDialog(inPathEntry, "Folder IN", func() {
 
 			h.compiler.InputDirectoryChange(inPathEntry.Text)
+			// registrar archivos nuevo directorio
+			h.watcher.RegisterFiles(inPathEntry.Text)
 		})
 
 	})

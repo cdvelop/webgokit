@@ -36,5 +36,7 @@ func (h *handler) Run() {
 		})
 	})
 
+	go h.watcher.FileWatcherStart()
+
 	h.window.ShowAndRun()
 }
