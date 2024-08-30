@@ -21,10 +21,10 @@ func (h *handler) Run() {
 				// Ejecuta aquí cualquier función que necesites antes de cerrar
 
 				if err := h.browser.BrowserClose(); err != nil {
-					h.Error(err.Error())
+					h.Error(err)
 				}
 				if err := h.server.ServerClose(); err != nil {
-					h.Error(err.Error())
+					h.Error(err)
 				}
 
 				// esperar x tiempo para el cierre

@@ -17,17 +17,20 @@ func (c *handler) Debug(message string) {
 	c.addText(message, c.colorBlue)
 }
 
-func (c *handler) Error(message string) {
-	// mostrar mensaje en consola gui
-	c.addText(message, c.colorRed)
-
-	// guardar mensaje en archivo log.txt
-	log.Println(message)
+func (c *handler) Error(e error) {
+	if e != nil {
+		// mostrar mensaje en consola gui
+		c.addText(e.Error(), c.colorRed)
+		// guardar mensaje en archivo log.txt
+		log.Println(e.Error())
+	}
 }
 
 func (c *handler) addText(text string, col color.Color) {
-	t := canvas.NewText(text, col)
-	c.texts = append(c.texts, t)
-	c.content.Add(t)
-	c.scroll.ScrollToBottom()
+	if text != "" {
+		t := canvas.NewText(text, col)
+		c.texts = append(c.texts, t)
+		c.content.Add(t)
+		c.scroll.ScrollToBottom()
+	}
 }

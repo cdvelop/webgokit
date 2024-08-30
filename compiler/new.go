@@ -2,7 +2,7 @@ package compiler
 
 type consoleAdapter interface {
 	Info(message string)
-	Error(message string)
+	Error(error)
 }
 
 type handler struct {

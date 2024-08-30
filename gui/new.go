@@ -3,6 +3,7 @@ package gui
 import (
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
+	"github.com/cdvelop/webgokit/config"
 )
 
 type compilerAdapter interface {
@@ -22,7 +23,7 @@ type consoleAdapter interface {
 	Console() fyne.CanvasObject
 	Info(message string)
 	Success(message string)
-	Error(message string)
+	Error(error)
 }
 
 type watcherAdapter interface {
@@ -31,7 +32,8 @@ type watcherAdapter interface {
 }
 
 type handler struct {
-	// console *widget.Entry
+	conf *config.Handler
+
 	window fyne.Window
 	consoleAdapter
 
@@ -41,12 +43,13 @@ type handler struct {
 	server   serverAdapter
 }
 
-func New(cons consoleAdapter, w watcherAdapter, c compilerAdapter, b browserAdapter, s serverAdapter) *handler {
+func New(conf *config.Handler, cons consoleAdapter, w watcherAdapter, c compilerAdapter, b browserAdapter, s serverAdapter) *handler {
 
 	a := app.NewWithID("com.webgokit.cdvelop.github")
 	a.Settings().SetTheme(newFysionTheme())
 
 	h := &handler{
+		conf:           conf,
 		window:         a.NewWindow("WebGoKit"),
 		consoleAdapter: cons,
 		watcher:        w,

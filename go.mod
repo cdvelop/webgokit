@@ -5,6 +5,7 @@ go 1.22.0
 require (
 	fyne.io/fyne/v2 v2.5.1
 	github.com/fsnotify/fsnotify v1.7.0
+	go.etcd.io/bbolt v1.3.11
 )
 
 require (

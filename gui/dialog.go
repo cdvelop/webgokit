@@ -32,7 +32,7 @@ func (h *handler) showFolderDialog(entry *widget.Entry, successMsg string, callb
 	// Crear el cuadro de diálogo para seleccionar la carpeta
 	folderDialog := dialog.NewFolderOpen(func(uri fyne.ListableURI, err error) {
 		if err != nil {
-			h.Error(err.Error())
+			h.Error(err)
 			return
 		}
 		if uri == nil {

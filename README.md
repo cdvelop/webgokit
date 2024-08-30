@@ -16,11 +16,11 @@ Esta herramienta busca optimizar el flujo de trabajo, permitiendo a los desarrol
 
 ## Características pendientes
 
-- [ ] Agregar navegador web para inicio automático
+- [x] creación de interfaz con [Fyne](https://fyne.io/)
+- [x] agregar persistencia en la configuración con [bbolt](https://github.com/etcd-io/bbolt) ruta .git/webgokit.db
+- [x] Soporte para hot-reloading con [fsnotify](https://github.com/fsnotify/fsnotify)
+- [ ] Agregar navegador web automatizado para desarrollo con [rod](https://github.com/go-rod/rod)
 - [ ] Creación de servidor web automático
-- [ ] Compilación con WebAssembly (WASM)
-- [ ] Agregar compilación con esbuild
-- [ ] Soporte para hot-reloading
-- [ ] Integración con herramientas de testing de Go
-- [ ] Generación automática de documentación
-- [ ] Soporte para múltiples entornos de desarrollo (dev, staging, prod)
+- [ ] Compilación con [WebAssembly](https://es.wikipedia.org/wiki/WebAssembly) (WASM)
+- [ ] Agregar compilación con [esbuild](https://esbuild.github.io/)
+- [ ] omitir errores de lectura en config según estado de la app (primer uso) 
